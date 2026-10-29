@@ -1,5 +1,5 @@
 :root{--bg:#0b0d10;--card:#14181d;--fg:#e8ecf1;--line:#232a32;--mut:#9aa6b2;--acc:#8fb3ff}
-.cat-ai{--acc:#ff8a3d}.cat-hardware{--acc:#ff5d5d}.cat-electrical{--acc:#4da3ff}.cat-software{--acc:#3ecf8e}
+.cat-ai{--acc:#ff8a3d}.cat-mechanical{--acc:#ff5d5d}.cat-electrical{--acc:#4da3ff}.cat-software{--acc:#3ecf8e}
 *{box-sizing:border-box}body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--fg);background:var(--bg)}
 main{max-width:980px;margin:auto;padding:32px 20px}a{color:var(--acc)}h1{margin:.2em 0;font-size:2.1rem}
 h2{margin-top:2em;font-size:1.2rem;border-bottom:1px solid var(--line);padding-bottom:6px}body[class*=cat-] h2{border-left:3px solid var(--acc);padding-left:10px;border-bottom:0}
