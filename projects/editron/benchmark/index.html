@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Editron generation benchmark · Daniel Klabunde</title>
-<link rel="stylesheet" href="../../../style.css?v=202611062055">
+<title>Editron video generation · Daniel Klabunde</title>
+<link rel="stylesheet" href="../../../style.css?v=202611081945">
 </head>
 <body class="cat-ai">
 <main>
 <p><a href="../">← Editron overview</a> · <a href="../details/">Engineering deep dive</a> · <a href="../../../">All projects</a></p>
 <header>
 <span class="cat">AI</span> <span class="badge prog">In progress</span> <span class="badge">Current lock</span>
-<h1>Editron generation benchmark</h1>
-<p class="lead">The current locked benchmark is the original Star Wars generation prompt: Commander Pillar walking a dark torrential battlefield at night.</p>
-<p>The scene is a wide hunt, a mask close-up, a rifle stalk, a storm POV, a lightning reveal, a handheld pistol draw, a red bolt past the camera, a green saber deflection, a dodge, a rifle-saber ignition with the red crossguard blade, and a mid-air clash that ends just before they collide. No music; only rain, storm, footsteps, blasters, and saber ignitions.</p>
-<p class="note">Locked on 2026-11-06. This lock replaces the yellow-raincoat pier test, which is retired. Later visual revisions are not part of this lock. Regenerate the wording below exactly, including the original spelling, so dated runs can be compared.</p>
+<h1>Video generation</h1>
+<p class="lead">An ongoing history of Editron benchmark videos. Each new version is logged with the clip, what changed since the previous run, what the run showed, and the training or generation approach.</p>
+<p>The standing text-only lock is the original Star Wars prompt: Commander Pillar walking a dark torrential battlefield at night. The scene is a wide hunt, a mask close-up, a rifle stalk, a storm POV, a lightning reveal, a handheld pistol draw, a red bolt past the camera, a green saber deflection, a dodge, a rifle-saber ignition with the red crossguard blade, and a mid-air clash that ends just before they collide. No music; only rain, storm, footsteps, blasters, and saber ignitions.</p>
+<p class="note">Locked on 2026-11-06. This lock replaces the yellow-raincoat pier test, which is retired. Later visual revisions are not part of this lock. Text-only runs keep the wording below, including the original spelling. A reference-assisted run, or any other change of prompt or protocol, is a different test. It is logged here, and it is not a like-for-like reading of model learning against text-only runs.</p>
 </header>
-<nav class="toc"><a href="#prompt">Locked prompt</a><a href="#runs">Runs</a><a href="#retired">Retired pier test</a></nav>
+<nav class="toc"><a href="#prompt">Locked prompt</a><a href="#runs">Run log</a><a href="#retired">Retired pier test</a></nav>
 
 <h2 id="prompt">Locked prompt</h2>
-<p class="muted">Copy this text exactly for every run of the current lock. Do not rewrite it between runs.</p>
+<p class="muted">Text-only runs of the current lock use this wording unchanged. If a run uses references or a different prompt, record that protocol on the run instead of rewriting this lock.</p>
 <pre class="prompt">A sci-fi soldier from Star Wars is walking through a dark torrential rainstorm at night.
 
 He is a commander in the Galactic Empire named Pillar, wearing all-black armor with a tattered black cloak around his shoulders. He is wearing a helmet/mask that is also all black that looks similar to Kylo Ren's helmet, with a few differences: there is no chrome, it's all black. It's also more detailed with more small design aspects in the face of the mask, and the respirator thingy is slightly narrower than on Kylo's mask. Essentially, the mask looks scarier and more intense than Kylo's.
@@ -69,14 +69,135 @@ The one last shot: a VERY wide shot side-on of Pillar mid-air lunging towards th
 The sound design of this scene has no music, only the realistic sounds of the rain and storms, footsteps, blaster shots, and lightsaber ignitions.
 </pre>
 
-<h2 id="runs">Runs</h2>
-<p>Future dated runs of this same prompt belong on this timeline, one card each, with the date, the clip, and the scores.</p>
-<!-- Replace the empty card with the first official run of this lock. Add later runs as more article.run cards. Do not rewrite the locked prompt. -->
-<div class="runs">
-<article class="run run-empty">
+<h2 id="runs">Run log</h2>
+<p>New benchmark versions are added here, newest last, one dated card per version. Compare learning across runs that share a protocol. A reference-assisted run uses images or other guidance along with the prompt. A text-only run does not. The posted Commander Pillar r2 is reference-assisted. It is not a pure text-only run, and it is not model-weight training.</p>
+<section class="glance" aria-label="What each run entry records">
+<div><h4>Video</h4><p>The clip for that version.</p></div>
+<div><h4>Changes</h4><p>What changed since the previous run.</p></div>
+<div><h4>Learning and results</h4><p>What the run showed, including failures.</p></div>
+<div><h4>Approach</h4><p>Training or generation approach, when one was used.</p></div>
+<div><h4>Prompt and protocol</h4><p>Text-only or reference-assisted, plus anything that differed from the lock or from the previous run.</p></div>
+</section>
+<!--
+Add the next benchmark as another article.run inside div.runs, after Commander Pillar r2.
+Do not renumber r2, and do not invent a Commander Pillar r1 card. The earlier generation is described only inside r2's change log.
+Fill only what the log from Editron actually contains. Do not invent a run, a lesson, or a score.
+Mark the protocol badge as text-only or reference-assisted.
+Do not describe a protocol change as model learning.
+
+<article class="run">
 <div class="run-card">
-<h3>No official run yet</h3>
-<p>No official run of this lock has been posted yet.</p>
+<h3>Run title and date</h3> <span class="badge textonly">Text-only</span>
+<div class="run-top">
+<figure>
+<video controls preload="metadata" playsinline>
+<source src="../../../assets/editron/RUN-FILE.mp4" type="video/mp4">
+</video>
+<figcaption></figcaption>
+</figure>
+<div>
+<dl>
+<dt>Date</dt>
+<dd></dd>
+<dt>Protocol</dt>
+<dd>Text-only, locked Commander Pillar prompt. Or: Reference-guided, with the references and any prompt difference stated.</dd>
+<dt>Specs</dt>
+<dd></dd>
+</dl>
+</div>
+</div>
+<h4>Changes since the previous run</h4>
+<p></p>
+<h4>Learning and results</h4>
+<p></p>
+<h4>Training or generation approach</h4>
+<p></p>
+</div>
+</article>
+
+Reference-assisted badge: <span class="badge ref">Reference-assisted</span>
+-->
+<div class="runs">
+<article class="run" id="pillar-r2">
+<div class="run-card">
+<h3>Commander Pillar, generated r2</h3> <span class="badge ref">Reference-assisted</span>
+<p class="muted">Iterative benchmark, not a polished finished film. Not a pure text-only run, and not model-weight training.</p>
+<div class="run-top">
+<figure>
+<video controls preload="metadata" playsinline width="848" height="480" aria-label="Commander Pillar generated r2, reference-assisted">
+<source src="../../../assets/editron/pillar-r2-web.mp4" type="video/mp4">
+</video>
+<figcaption>Web copy of the r2 generation: H.264 picture, same 1,584 frames and timing, original AAC copied. Lossy compression, not a new run. 11,438,090 bytes.</figcaption>
+</figure>
+<div>
+<dl>
+<dt>Generated</dt>
+<dd>2026-11-08, about 2:20 PM ET (America/New_York). Documented approximate time, not independently verified generation metadata.</dd>
+<dt>Protocol</dt>
+<dd>Reference-assisted. Fourteen beats, one pass, no reshoots and no mirrored clips. Shots 4, 5, 7, and 10 are text-only POV shots inside this run. The run as a whole is not text-only.</dd>
+<dt>Picture</dt>
+<dd>66.04 s container (66.041016 s). Timeline durations total 66.0 s. 848×480, 24 fps, H.264 + AAC stereo. 1,584 video frames. Fourteen hard cuts.</dd>
+<dt>Audio</dt>
+<dd>Native AAC from the generated clips is in the file and was not rebuilt. No listening review. Not silent, and not sound-design verified.</dd>
+</dl>
+</div>
+</div>
+
+<h4>Prompt and protocol</h4>
+<p>The frozen prompt above is unchanged. Each shot quotes its locked beat. The asset binding below is a separate labeled addition. Locked-prompt SHA-256 recorded with this run: <code>ed19546477f358babffaa91143319de6a2c2ca29838f8a3de040e98e7326810a</code>.</p>
+<pre class="prompt binding">ASSET BINDING (supplemental; separate from the locked benchmark wording, which is quoted above unchanged): Pillar's helmet is exactly &lt;IMAGE_0&gt; (front) and &lt;IMAGE_1&gt; (side): matte black metal, separate riveted rectangular black-metal mouth plate, the visor slit is pure light-absorbing black void with zero reflections, no chrome, small flat Imperial insignias on the sides of the forehead. His armor, belt and tattered black cloak follow &lt;IMAGE_2&gt; (no helmet from that image; use the helmet above). His lean, muscular 6ft build follows &lt;IMAGE_3&gt;, always covered by the armor. His rifle is exactly &lt;IMAGE_4&gt;: a long slim black stockless rifle; the front blade emitter stays OFF. Dark night torrential rain, mud, cinematic live-action realism, no music, no text.</pre>
+<p>Reference-to-video used a helmet front, a helmet side, an armored-outfit image whose helmet is overridden, a lean-body image for build only, and a rifle with the front emitter off. Shots 12–14 also use a rear-saber rifle reference. Shots 4, 5, 7, and 10 are POV and were generated text-only. The rejected Blender body was not used.</p>
+<p>Each beat was one Grok Imagine GenerateVideo call at 16:9, default 6 seconds and 480p, then trimmed and joined with hard cuts. The four POV shots above were text-only; the other beats were reference-to-video.</p>
+<div class="tw">
+<table>
+<thead><tr><th>Shot</th><th>In (s)</th><th>Duration (s)</th><th>Logged condition</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>0</td><td>5.5</td><td>Reference-assisted</td></tr>
+<tr><td>2</td><td>0.5</td><td>4.5</td><td>Reference-assisted</td></tr>
+<tr><td>3</td><td>0</td><td>4.5</td><td>Reference-assisted</td></tr>
+<tr><td>4</td><td>0</td><td>3.5</td><td>POV, text-only</td></tr>
+<tr><td>5</td><td>0</td><td>4</td><td>POV, text-only</td></tr>
+<tr><td>6</td><td>0</td><td>6</td><td>Reference-assisted</td></tr>
+<tr><td>7</td><td>0</td><td>3</td><td>POV, text-only</td></tr>
+<tr><td>8</td><td>0</td><td>5</td><td>Reference-assisted</td></tr>
+<tr><td>9</td><td>1</td><td>3</td><td>Reference-assisted</td></tr>
+<tr><td>10</td><td>0</td><td>6</td><td>POV, text-only</td></tr>
+<tr><td>11</td><td>0</td><td>5</td><td>Reference-assisted</td></tr>
+<tr><td>12</td><td>0</td><td>6</td><td>Reference-assisted, rear-saber reference</td></tr>
+<tr><td>13</td><td>0</td><td>6</td><td>Reference-assisted, rear-saber reference</td></tr>
+<tr><td>14</td><td>0</td><td>4</td><td>Reference-assisted, rear-saber reference</td></tr>
+</tbody>
+</table>
+</div>
+<p class="muted">Trim in-point and duration from the run timeline. Durations total 66.0 seconds.</p>
+
+<h4>Changes since the previous run</h4>
+<p>These differences are from the r2 log, measured against an earlier Commander Pillar generation that is not posted on this page. They are not a comparison with the retired pier test, and they are not a text-only score of model learning.</p>
+<ul>
+<li>Both generations used 14 independently generated beats. The earlier timeline totals 54.25 seconds and included corrective generations, a mirrored shot 12, and a slowed final leap. R2 totals 66 seconds in one pass, with no reshoots and no mirrored clips.</li>
+<li>R2 keeps the native audio from each generated clip. On the earlier generation, v1 replaced native audio with synthesized storm and foley. V2 kept that picture bit-identical and rebuilt the audio from CC0 recordings plus synthesized effects. V2 is an audio revision, not another generation benchmark.</li>
+<li>Editron reports a newly approved separate riveted mask and a black-void visor. The binding asks for a matte black helmet, a separate riveted mouth plate, and a light-absorbing visor. Provenance says the mask is close but not exact. Those are design targets, not a claim that every frame matches them.</li>
+<li>Editron reports a stockless reversible rifle/saber: rear axial blade, single 45-degree crossguard. The binding says the rifle is stockless and the front emitter stays off. Provenance lists rear-saber references for shots 12–14. Generated frames still show rifle drift, below.</li>
+<li>Editron reports that photo-derived lean anatomy and outfit references replace a rejected Blender body. Provenance says that rejected body was not used on r2. The log does not show whether the earlier generation used it.</li>
+</ul>
+
+<h4>Learning and results</h4>
+<p>Editron reports that reference guidance improves local appearance and does not keep continuity from shot to shot. That is Editron’s report, not a new independent review for this page.</p>
+<ul>
+<li>Red visor glow. Editron places it around 34–35 seconds. Provenance frame sheets: shot 8 shows glowing red eye slits as the shot fires, which breaks the void visor.</li>
+<li>Rifle design drift and extra stocks. Editron reports the rifle stock and shape changing between shots. Provenance: the rifle shape drifts between shots.</li>
+<li>Extra saber blades from about 52 seconds, reported by Editron.</li>
+<li>Held props disappear and reappear, reported by Editron. Provenance: in shot 6 the pistol draw goes past the frame.</li>
+<li>Provenance frame sheets, not re-reviewed for this page: shot 9 has a bluish blade or bolt flash at the left. Shot 14 is a low running leap, not the requested very wide airborne tableau.</li>
+</ul>
+<p>Whether the ending stays before impact is unresolved. Editron reports that the final leap ends before impact. Provenance says contact has not been confirmed as excluded. That is not a verified pass.</p>
+<p>Daniel’s feedback, as relayed by Editron, is separate from the frame-sheet notes. He called the rain helmet close-up “NAILED,” and the edge runoff and dripping “perfect.” Editron also reports that Daniel found r2 better than the first test and still flawed. The log has no quantitative improvement figure. This page does not treat those remarks as an independent viewing.</p>
+<p>An AAC stream is present. Native audio was kept. Nobody completed a listening review for this log. The file is not described as silent, and the sound design is not verified.</p>
+<p>The exact-geometry Blender comparison of scene, camera, and action is unfinished and unreviewed. No comparison result is claimed.</p>
+
+<h4>Training or generation approach</h4>
+<p>Reference and design preparation, not model-weight training or fine-tuning. Editron describes iterating from sketches and reference images, and building reusable Blender helmet and rifle geometry. The Blender comparison itself has no reviewed result.</p>
+<p>Generation was one pass of fourteen beats. Each beat was one Grok Imagine GenerateVideo call: reference-to-video, except the four text-only POV shots named above. Clips were trimmed and hard-cut. No regenerations and no mirrored clips.</p>
 </div>
 </article>
 </div>
@@ -113,6 +234,8 @@ The sound design of this scene has no music, only the realistic sounds of the ra
 <dl>
 <dt>Generated</dt>
 <dd>2026-11-06, around 2:56 PM ET (America/New_York)</dd>
+<dt>Protocol</dt>
+<dd><span class="badge textonly">Text-only</span> Locked pier prompt alone, with no reference still.</dd>
 <dt>Original</dt>
 <dd>10.04 s, 1920×1088, 24 fps, H.264 + AAC stereo. Target was 10.0 s, 1920×1080.</dd>
 <dt>Tally</dt>
@@ -133,6 +256,12 @@ The sound design of this scene has no music, only the realistic sounds of the ra
 </div>
 </div>
 
+<h4>Changes since the previous run</h4>
+<p>First run posted for this prompt.</p>
+<h4>Learning and results</h4>
+<p>Recorded on the scorecard below. Rough tally excluding unchecked sound: 16 yes, 10 partial, 1 no. Sound items 29–30 were unchecked (audio present, no real-time listen completed).</p>
+<h4>Training or generation approach</h4>
+<p>None recorded on the run log.</p>
 <h4>Scorecard</h4>
 <p class="muted">Same lines every V1 run: yes, partial, or no. Craft is 1–5, from stills across the timeline. Sound items 29–30 were unchecked (audio present, no real-time listen completed) and are left out of the tally.</p>
 <div class="tw">
