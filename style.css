@@ -66,5 +66,9 @@ h2.hist{border-left-color:var(--mut)}
 .badge.hist{color:var(--mut);border-color:var(--line)}
 .badge.textonly{color:var(--acc);border-color:color-mix(in srgb,var(--acc) 55%,transparent)}
 .badge.ref{color:#ffc49a;border-style:dashed;border-color:color-mix(in srgb,var(--acc) 70%,transparent)}
+.badge.previs{color:#e8ecf1;border-style:dashed;border-color:var(--mut)}
+.compare .run::before{background:transparent;border:2px solid var(--mut);width:8px;height:8px;left:-6px}
+.compare .run-card{border-top-style:dashed;border-top-color:var(--mut)}
+.previs-banner{font-weight:700;letter-spacing:.02em}
 .run h4{margin:16px 0 6px}
 @media(max-width:800px){.run-top{grid-template-columns:1fr}.run dl{grid-template-columns:1fr;gap:2px}.run dd{margin-bottom:8px}}
