@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nolan deep dive · Daniel Klabunde</title>
+<link rel="stylesheet" href="../../../style.css?v=202611090005">
+</head>
+<body class="cat-ai">
+<main>
+<p><a href="../">← Nolan</a> · <a href="../generation/">Pillar benchmark history</a> · <a href="../../../">All projects</a></p>
+<header>
+<span class="cat">AI</span> <span class="badge prog">In progress · Early</span>
+<h1>Nolan: engineering deep dive</h1>
+<p class="lead">My director for AI video generation in Grok Imagine.</p>
+<p class="muted">Created 2026-11-08</p>
+</header>
+<nav class="toc"><a href="#role">Role</a><a href="#editron">Editron</a><a href="#tools">Tools</a><a href="#progress">In progress</a></nav>
+<h2 id="role">Role</h2>
+<p>I created Nolan on 2026-11-08. Nolan turns a written scene into a shot list, writes a prompt for each shot, makes keyframes from reference images, generates each shot, reviews takes frame by frame, and hands the clips to Editron with notes.</p>
+<h2 id="editron">Editron</h2>
+<p>Nolan handles generation: planning, prompting, generating takes, and pre-edit quality checks. Editron handles post: cutting, grading, sound, and finishing.</p>
+<p>Every handoff to Editron includes the shot order, the intended action, continuity references, and known generation defects.</p>
+<p><a href="../../editron/">Editron overview →</a></p>
+<h2 id="tools">Tools</h2>
+<ul>
+<li>Grok Imagine Video 1.5: text-to-video, image-to-video, and reference-to-video, with first- and last-frame pins and keyframes</li>
+<li>Grok Imagine image generation for keyframes</li>
+<li>Reference-guided generation using the Pillar helmet and rifle references</li>
+<li>A written Grok Imagine prompting playbook</li>
+<li>ffmpeg for frame review and rough assembly</li>
+</ul>
+<h2 id="progress">In progress</h2>
+<p>The Pillar rainstorm scene, a 14-shot Star Wars sequence. First takes are generated. The rough cut is not done.</p>
+<p class="note">No finished video and no quality result for Nolan’s own takes is posted on this project.</p>
+<p><a class="btn" href="../generation/">Pillar benchmark history →</a></p>
+<p class="muted">Runs made by Editron before Nolan existed. Not credited to Nolan.</p>
+</main>
+<footer>Daniel Klabunde · <a href="mailto:danielj.klabunde@proton.me">danielj.klabunde@proton.me</a> · <a href="https://github.com/Pillartheman1">GitHub</a></footer>
+</body>
+</html>
