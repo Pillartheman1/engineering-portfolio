@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Editron video generation · Daniel Klabunde</title>
-<link rel="stylesheet" href="../../../style.css?v=202611082105">
+<link rel="stylesheet" href="../../../style.css?v=202611090005">
 </head>
 <body class="cat-ai">
 <main>
@@ -70,7 +70,7 @@ The sound design of this scene has no music, only the realistic sounds of the ra
 </pre>
 
 <h2 id="runs">Run log</h2>
-<p>New benchmark versions are added here, newest last, one dated card per version. Compare learning across runs that share a protocol. A reference-assisted run uses images or other guidance along with the prompt. A text-only run does not. The posted Commander Pillar r2 is reference-assisted. It is not a pure text-only run, and it is not model-weight training.</p>
+<p>New benchmark versions are added here, newest last, one dated card per version. Compare learning across runs that share a protocol. A reference-assisted run uses images or other guidance along with the prompt. A text-only run does not. The posted Commander Pillar r2 is reference-assisted. It is not a pure text-only run, and it is not model-weight training. Hybrid r3 and learned r4, later on this log, are failed experiments. Each has its own protocol. Neither is an apples-to-apples score against r2 or against the text-only lock, and neither is an approved improvement.</p>
 <section class="glance" aria-label="What each run entry records">
 <div><h4>Video</h4><p>The clip for that version.</p></div>
 <div><h4>Changes</h4><p>What changed since the previous run.</p></div>
@@ -79,7 +79,7 @@ The sound design of this scene has no music, only the realistic sounds of the ra
 <div><h4>Prompt and protocol</h4><p>Text-only or reference-assisted, plus anything that differed from the lock or from the previous run.</p></div>
 </section>
 <!--
-Add the next benchmark as another article.run inside div.runs, after Commander Pillar r2.
+Add the next benchmark as another article.run inside div.runs, after learned r4.
 Do not renumber r2, and do not invent a Commander Pillar r1 card. The earlier generation is described only inside r2's change log.
 Fill only what the log from Editron actually contains. Do not invent a run, a lesson, or a score.
 Mark the protocol badge as text-only or reference-assisted.
@@ -198,6 +198,105 @@ Reference-assisted badge: <span class="badge ref">Reference-assisted</span>
 <h4>Training or generation approach</h4>
 <p>Reference and design preparation, not model-weight training or fine-tuning. Editron describes iterating from sketches and reference images, and building reusable Blender helmet and rifle geometry. The later Blender previs is logged separately and is not a result for this generated run.</p>
 <p>Generation was one pass of fourteen beats. Each beat was one Grok Imagine GenerateVideo call: reference-to-video, except the four text-only POV shots named above. Clips were trimmed and hard-cut. No regenerations and no mirrored clips.</p>
+</div>
+</article>
+<article class="run" id="hybrid-r3">
+<div class="run-card">
+<h3>Hybrid r3</h3> <span class="badge fail">Failed experiment</span> <span class="badge ref">Still-guided</span>
+<p class="previs-banner">Not a full recreation of the benchmark, and not an approved improvement.</p>
+<p class="muted">One still-guided generation on 2026-11-08. Not video motion transfer, and not model-weight training. A 2-frames-per-second contact sheet is the review record. It does not settle every beat, and the sound was not listened to.</p>
+<div class="run-top">
+<figure>
+<video controls preload="metadata" playsinline width="848" height="480" aria-label="Hybrid r3 failed still-guided generation">
+<source src="../../../assets/editron/pillar-hybrid-r3.mp4" type="video/mp4">
+</video>
+<figcaption>Hybrid r3 as generated. 6.041667 seconds, 848×480, 24 fps, AAC present. No padding, looping, slowing, or edits. Native audio was not checked.</figcaption>
+</figure>
+<div>
+<dl>
+<dt>Date</dt>
+<dd>2026-11-08. The notes do not give a clock time.</dd>
+<dt>Protocol</dt>
+<dd>One reference-to-video call. Duration and resolution were left at the tool defaults. The locked prompt was supplied unchanged, then a separate choreography and appearance binding. Not a text-only run, and not comparable as a controlled rerun of r2.</dd>
+<dt>Picture</dt>
+<dd>6.041667 s, 848×480, 24 fps, H.264 + AAC stereo. This is not the 41-second benchmark.</dd>
+<dt>Audio</dt>
+<dd>An AAC track is in the file. It was not perceptually verified.</dd>
+</dl>
+</div>
+</div>
+
+<h4>Prompt and protocol</h4>
+<p>The frozen prompt above was supplied verbatim. Its recorded SHA-256 is still <code>ed19546477f358babffaa91143319de6a2c2ca29838f8a3de040e98e7326810a</code>. The binding below is extra guidance. It is not part of the lock.</p>
+<pre class="prompt binding">SUPPLEMENTAL CHOREOGRAPHY AND APPEARANCE BINDINGS — separate from the unchanged original above.
+Generate realistic cinematic moving footage, not a storyboard, collage, slideshow, animation toy, or render of reference sheets. Recreate the original action order using the reviewed Blender film's composition and blocking as the skeleton, while replacing ALL procedural/toy appearance with photoreal people, wet fabric and battle-worn armor, real body weight and momentum.
+&lt;IMAGE_0&gt; is PRIMARY appearance: approved helmet front, pure nonreflective black void visor without red eyes, separate narrow riveted rectangular black-metal respirator plate. Match its perfect water collecting along the helmet edges, thin runoff streams and individual drips. &lt;IMAGE_1&gt; and &lt;IMAGE_2&gt; bind helmet side and three-quarter shape and flat side-forehead Imperial insignias. All black, never chrome. &lt;IMAGE_3&gt; binds fitted armored outfit and tattered cloak ONLY, NOT its helmet or weapon. &lt;IMAGE_4&gt; binds lean muscular anatomy ONLY, never bare skin or shirtless costume. &lt;IMAGE_5&gt; binds exact slim stockless rifle OFF. &lt;IMAGE_6&gt; binds lit configuration: precisely ONE long axial red blade from rear end plus ONE shorter red blade extending down/rear at45degrees from grip base. Front muzzle blade always OFF. No doubled/symmetric crossguard, extra blade, buttstock or weapon morph.
+&lt;IMAGE_7&gt; is a six-panel BLENDER MECHANICS-ONLY reference, NOT visual appearance. Never show its labels, collage, toy bodies, or panels in the footage. A/B: LEFT hand anchored at rear rifle body/grip junction; long barrel trails behind him, RIGHT hand reaches rear-belt pistol, camera follows hand as pistol comes forward. C: frontal RIGHT pistol shot, left hand still holds reversed rifle. D: distant GREEN saber deflects red bolt. E: left reversed rifle ignites the TWO blades only; right pistol volleys. F: very-wide final geography, enemy LEFT green, Pillar RIGHT red, both airborne, stop BEFORE contact.
+Reviewed overall shot order: wide right-to-left hunt; frontal helmet closeup raising eyeline; profile halt/advance; dark storm POV lightning reveals distant enemy; waist/hand follow draw; suspense storm POV; frontal pistol fire then immediate profile wide actor right shooting left; distant green-saber deflection; profile dodge; correct two-blade rifle ignition; pistol volley, ONE saber spin, leftward launch; VERY wide two-airborne approach, end before collision. Preserve handedness, readable mechanics and screen direction. Only realistic rain/wind/thunder, footsteps, cloak/holster, bolts and saber sounds; NO music, voice, titles or captions.</pre>
+<p>Appearance references, separate from the mechanics board: the approved rain helmet, helmet side and three-quarter angles, the armored outfit, lean anatomy only, the unlit stockless rifle, and the two-blade rifle. The mechanics board is six actual Blender previs frames, 450, 528, 665, 721, 870, and 984, and no raw Blender frame was pinned as appearance. This was still guidance, not video-to-video motion transfer.</p>
+
+<h4>Changes since the previous run</h4>
+<p>Relative to reference-assisted r2, this attempt used the reviewed Blender choreography and that mechanics-only frame board, plus the approved cinematic helmet and runoff, helmet angles, outfit, anatomy, and rifle references. It was a single generation of the whole sequence, not fourteen separate beats. Nothing here shows the generative model improved.</p>
+
+<h4>Learning and results</h4>
+<p>The 2-frames-per-second sheet shows a hunt, a helmet close-up, a profile, a lightning reveal, pistol aim and fire, a distant green response, and a close airborne confrontation. Most beats are compressed into the default length. Pistol aim and fire read in those frames. The uninterrupted rear-belt hand-follow does not.</p>
+<p>From the contact sheet: the full action is squeezed into the default length. Deliberate pauses, the 1.5-second bolt flight, a clear dodge, the ignition, the volley and one spin, and the very wide pre-collision ending are missing or not legible. The helmet has conspicuous silver chrome trim, against a no-chrome binding. Rifle barrels are repeated or doubled, with a stock-like rear in the point-of-view and hand shots. The final weapon shows a symmetric extra crossguard, not the single 45-degree crossguard. The intended very wide airborne ending, green saber on the left and Pillar on the right, is not legible. The sheet’s airborne moment is a close confrontation, and the notes say a full watch still has to settle the exact endpoint.</p>
+<p>Also reported for this attempt: the grip reads as a standard hold, not the reversed left-hand rifle the binding asked for.</p>
+<p>The visor looks dark in the sampled frames. That does not certify every frame. These defects mean the clip is not a successful full benchmark and not a mechanically faithful copy. Blender frame guidance did not transfer the previs motion or the weapon geometry. This same call was not retried. Learned r4 is a separate later entry.</p>
+<p>An AAC track is present. Native audio was not checked, so the sound is not perceptually verified.</p>
+
+<h4>Training or generation approach</h4>
+<p>One Grok Imagine GenerateVideo reference-to-video call. Duration and resolution were unset, so the tool defaults applied. Still images guided the call. That is not video motion transfer, and it is not model training or fine-tuning.</p>
+<p>Lesson from the failed attempt: putting the whole sequence into one default 6-second generation lost the pacing and the mechanical identity, even with Blender frames as a board. Appearance references plus a mechanics board did not hold weapon topology or handedness.</p>
+</div>
+</article>
+<article class="run" id="learned-r4">
+<div class="run-card">
+<h3>Learned r4</h3> <span class="badge fail">Failed experiment</span> <span class="badge ref">Prompting</span>
+<p class="previs-banner">Not a full benchmark, and not an approved improvement.</p>
+<p class="muted">Practical prompting, not neural training or fine-tuning. A 2-frames-per-second sheet was written first. Editron’s later full review supersedes that sheet where they conflict. This page did not watch the clip independently.</p>
+<div class="run-top">
+<figure>
+<video controls preload="metadata" playsinline width="848" height="480" aria-label="Learned r4 failed prompting experiment">
+<source src="../../../assets/editron/pillar-learned-r4.mp4" type="video/mp4">
+</video>
+<figcaption>Learned r4 as generated. 6.041667 seconds, 848×480, 24 fps. AAC is in the file. One call, no padding, looping, or retry.</figcaption>
+</figure>
+<div>
+<dl>
+<dt>Date</dt>
+<dd>2026-11-08, 7:06 PM ET</dd>
+<dt>Protocol</dt>
+<dd>One reference-to-video call. Duration and resolution were unset. The locked prompt was quoted unchanged, then physical constraints and a short choreography sequence. No Blender frames and no input video were supplied. Not a text-only run, and not a controlled rerun of r2 or r3.</dd>
+<dt>Picture</dt>
+<dd>6.041667 s, 848×480, 24 fps. Not the 41-second benchmark.</dd>
+<dt>Audio</dt>
+<dd>AAC is in the file. Editron’s full review, not a listen for this page, reports audible rain, thunder, mechanical racking, a pistol, and green saber effects. That is not a claim of perfect sound-design adherence. The retired pier test barred thunder. This lock does not state that ban.</dd>
+</dl>
+</div>
+</div>
+
+<h4>Prompt and protocol</h4>
+<p>The original locked prompt stayed a separate quoted section. What changed from hybrid r3 was the guidance around it. Physical hand and weapon constraints were written first. The canonical all-black helmet replaced the wet close-up that carried silver-looking trim. The outfit reference was cropped so it no longer included a helmet. Five role-separated images were used: helmet front, helmet side, outfit without helmet, unlit rifle, and two-blade rifle. The Blender mechanics collage was not supplied. The wet close-up was studied and was not an input image. No raw Blender frame was pinned.</p>
+
+<h4>Changes since the previous run</h4>
+<p>Hybrid r3 had sent a six-panel Blender frame board plus appearance references that could contradict each other. R4 dropped that collage and those conflicting helmet images, and put the mechanical rules in text: left palm on the rear grip with the barrel trailing backward, right hand free for a rear-belt draw, one stockless barrel, two emitters only, asymmetric crossguard, and an ending with the enemy on the left and Pillar on the right, both airborne and apart. This is a prompting change. It is not model training, and it is not evidence the model improved.</p>
+
+<h4>Learning and results</h4>
+<p>The earlier 2-frames-per-second notes were optimistic. They reported less silver, a darker visor in sampled frames, and a finale with separated airborne actors, green on the left and red on the right. They also already saw a conventional buttstock, a conventional grip, a short perpendicular crossguard, and missing draw, deflection, dodge, volley, and spin. The end on that sheet was medium-wide, not very wide, and runoff was not established from those stills.</p>
+<p>Editron’s later full review replaces that optimism:</p>
+<ul>
+<li>The silver mouth mask remains.</li>
+<li>The rifle is stocked and held forward, not reversed and stockless.</li>
+<li>The draw reads from the front of the belt, not the rear.</li>
+<li>There is no red saber ignition and no airborne finale.</li>
+<li>The hunt, close-up, lightning, draw, and fire are present.</li>
+<li>The deflection, dodge, custom ignition, volley, spin, and leap are missing.</li>
+</ul>
+<p>Simplified references and explicit mechanics still did not transfer the Blender choreography. A 6-second output cannot establish that the full scene is there. The persistent failure is action compression and weapon topology, not a lack of words in the prompt.</p>
+
+<h4>Training or generation approach</h4>
+<p>One GenerateVideo reference-to-video call, with no retry. The practical lesson from the Blender review, the shot list, and r3’s failed sample was written into the prompt. No Blender image and no video were inputs. That is prompting, not learned weights and not motion transfer.</p>
 </div>
 </article>
 </div>
