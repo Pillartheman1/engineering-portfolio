@@ -1,15 +1,89 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Arc Reactor · Daniel Klabunde</title><link rel="stylesheet" href="../../style.css?v=202611210230"></head><body class="cat-electrical"><main><p class="navline"><a href="../../">← All projects</a></p><header><span class="cat">Electronics</span> <span class="badge prog">In progress · CAD not started</span><h1>Arc Reactor</h1><p class="lead">An Iron Man-style chest light from two Hover-1 Helix LED rings, worn under a shirt on a chest strap.</p>
-<p class="muted">Salvaged the rings, tested them, and started the mount plan · Nov 2026 – present</p><ul class="tags"><li>LED</li><li>3D printing</li><li>Wearable</li><li>PLA</li><li>Ender-3</li></ul></header>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Arc Reactor · Daniel Klabunde</title>
+<link rel="stylesheet" href="../../style.css?v=20261123">
+</head>
+<body class="cat-electrical">
+<main>
+<p class="navline"><a href="../../">← All projects</a></p>
+<header>
+<span class="cat">Electronics</span> <span class="badge paused">Paused · prototype tested</span>
+<h1>Arc Reactor</h1>
+<p class="lead">An Iron Man-style chest light from two salvaged wheel LED rings, worn under a shirt on a chest strap.</p>
+<p class="muted">Tape-up prototype tested 22 Nov 2026, then parked to focus on CyberBoard</p>
+<ul class="tags"><li>LED</li><li>3D printing</li><li>Wearable</li><li>PLA</li><li>Ender-3</li></ul>
+</header>
 <!-- Video: no footage yet. A teammate will add a blue-themed demo in this spot, using the same player as the other projects:
 <figure class="demo"><video controls preload="metadata" playsinline poster="../../assets/arc-reactor/arc-reactor-demo-poster.jpg" style="width:100%;height:auto;display:block;background:#000;border-radius:8px"><source src="../../assets/arc-reactor/arc-reactor-demo.mp4" type="video/mp4"></video><figcaption></figcaption></figure>
 -->
-<figure class="demo" style="max-width:440px;margin-left:auto;margin-right:auto"><img src="../../assets/arc-reactor/2026-11-18_led-ring_photo_v1.jpg" alt="Salvaged Hover-1 Helix wheel LED ring on a notebook: aluminum PCB marked SMT1152, nine SMD LEDs, three resistors, and soldered plus and minus pads" style="width:100%;height:auto;max-height:none;object-fit:contain"><figcaption>Salvaged Hover-1 Helix wheel LED ring: aluminum PCB marked SMT1152, 9 SMD LEDs, three resistors marked 101 (100 ohm), and +/− pads with some soldering heat. The 10.7 mm notes in the background are axle dimensions, not the ring.</figcaption></figure>
-<section class="glance"><div><h4>Problem</h4><p>I pulled two LED rings out of the Hover-1 Helix wheels (the CyberBoard donor) and want a small arc reactor I can wear on my chest under a shirt.</p></div><div><h4>Constraints</h4><ul><li>Quick build: a 3D-printed housing, an on/off button, and a diffuser</li><li>Mounts on a chest GoPro strap. The mounting bracket is already off</li><li>Low profile under a shirt. The resistors ran warm at 18 V, so the housing needs vents or a standoff from the chest</li><li>Ender-3, about 220 × 220 mm, PLA</li></ul></div><div><h4>Key result</h4><p>Not modeled yet. Both rings stay dark on a single 9 V battery, light on a brief 18 V tap, and work perfectly on 12 V batteries. That is the supply.</p></div></section>
-<h2>Measured parameters</h2><div class="tw"><table><tr><th>Parameter</th><th>Value</th><th>Basis</th></tr><tr><td>Supply</td><td>12 V batteries</td><td>Measured</td></tr><tr><td>Bench check</td><td>18 V for 1–2 seconds</td><td>Measured; two 9 V batteries in series</td></tr><tr><td>LEDs per ring</td><td>9</td><td>Counted</td></tr><tr><td>Series resistors</td><td>3 × 100 ohm</td><td>Marking read (101)</td></tr></table></div>
-<h2>Results</h2><div class="tw"><table><tr><th>Check</th><th>Result</th></tr><tr><td>One 9 V battery</td><td>No light, both rings</td></tr><tr><td>18 V, brief tap</td><td>Both rings light</td></tr><tr><td>12 V batteries</td><td>Work perfectly</td></tr></table></div>
-<h2>Failure and fix</h2><p>A single 9 V battery left both rings dark, and diode mode on my CEN-TECH meter read OL both ways. They had already worked on the hoverboard, so I worried the soldering heat from pulling them off had killed them. That meter can false-fail these LEDs, and 9 V is at or below the string voltage (a 9 V battery also sags under load). Two 9 V batteries in series, tapped for 1–2 seconds at 18 V, lit both rings. I do not leave them on 18 V: the 100 ohm resistors run warm. They now run on 12 V batteries.</p>
-<h2>Decisions</h2><div class="tw"><table><tr><th>Decision</th><th>Choice</th><th>Tradeoff</th></tr><tr><td>Chest mount</td><td>Flat, slightly textured glue pad. The strap&#x27;s back plate is hot-glued to it</td><td>The GoPro bracket is already off, so a printed 2-prong has nothing to mate with. Stays thin under a shirt; the joint is not meant to come apart often</td></tr><tr><td>Supply</td><td>12 V batteries</td><td>9 V is too low. 18 V is a bulky bench workaround, and the resistors run warm. A 3S pack or a USB-C boost was not needed</td></tr><tr><td>Diffuser</td><td>Required on the front of the housing</td><td>An under-shirt preview did not look right without one. Material is still open: translucent white PLA or PETG, or frosted acrylic</td></tr></table></div>
-<h2>Visuals</h2><figure><img src="../../assets/arc-reactor/2026-11-18_led-ring-18v-test_diagram_v1.png" alt="Diagram of two 9 V batteries wired in series to an LED ring for a one to two second 18 V tap" style="width:100%;height:auto;max-height:none;object-fit:contain" loading="lazy"><figcaption>18 V bench wiring: battery A+ tied to battery B−, free terminals to the ring +/−, tap 1–2 seconds only. This is the hookup that lit the rings after one 9 V battery left them dark.</figcaption></figure>
-<h2>Next steps</h2><ul><li>Measure the rings (outer diameter, inner diameter, thickness, and pad positions), the strap back plate, and the 12 V batteries</li><li>Choose one ring or both, a latching or momentary button, and the diffuser material</li><li>Model a low-profile housing with the button, diffuser, and vents or a chest standoff. CAD has not started</li></ul></main>
-<footer><span class="who">Daniel Klabunde</span><span class="sep"> · </span><a href="mailto:danielj.klabunde@proton.me">danielj.klabunde@proton.me</a><span class="sep"> · </span><a href="https://github.com/Pillartheman1">GitHub</a></footer></body></html>
+<figure class="demo" style="max-width:440px;margin-left:auto;margin-right:auto"><img src="../../assets/arc-reactor/2026-11-18_led-ring_photo_v1.jpg" alt="Salvaged wheel LED ring on a notebook: aluminum PCB, nine SMD LEDs, three resistors, and soldered plus and minus pads" style="width:100%;height:auto;max-height:none;object-fit:contain"><figcaption>Salvaged wheel LED ring: aluminum PCB, 9 SMD LEDs, three resistors marked 101 (100 ohm), and +/− pads with some soldering heat. The 10.7 mm notes in the background are axle dimensions, not the ring.</figcaption></figure>
+<section class="glance">
+<div><h4>Problem</h4><p>I pulled two LED rings out of the hoverboard wheels and want a small arc reactor I can wear on my chest under a shirt.</p></div>
+<div><h4>Constraints</h4><ul>
+<li>Quick build: a 3D-printed housing, an on/off button, and a diffuser</li>
+<li>Mounts on a chest strap. The bracket is off the plate. The plate's prongs are ~8 mm tall</li>
+<li>Low profile under a shirt, but the housing has to clear or cover the buckle</li>
+<li>The resistors ran warm at 18 V, so the housing needs vents or a standoff from the chest</li>
+<li>Ender-3, about 220 × 220 mm, PLA</li>
+</ul></div>
+<div><h4>Key result</h4><p>A tape-up with no printed parts lights, and it looks good worn. The buckle sticks out farther than the light, and the ring reads semi-square with dotty LEDs. Parked 22 Nov 2026. CAD has not started.</p></div>
+</section>
+<h2>Measured parameters</h2>
+<div class="tw"><table>
+<tr><th>Parameter</th><th>Value</th><th>Basis</th></tr>
+<tr><td>Ring OD</td><td>60 mm</td><td>Measured</td></tr>
+<tr><td>Ring ID</td><td>~46 mm</td><td>Measured</td></tr>
+<tr><td>Band</td><td>~6.6 mm</td><td>Measured</td></tr>
+<tr><td>Ring thickness with LEDs</td><td>Pending</td><td>Not measured</td></tr>
+<tr><td>Supply</td><td>12 V batteries. The one on hand is an A23, 28 × 10 mm</td><td>Size measured. Runtime not tested</td></tr>
+<tr><td>A23 capacity</td><td>~50 mAh class, so runtime will be short</td><td>Estimated. Confirm by test</td></tr>
+<tr><td>Strap prongs</td><td>~8 mm tall, ~37 × 25 mm footprint</td><td>Measured</td></tr>
+<tr><td>Strap plate overall</td><td>Pending</td><td>Not measured</td></tr>
+<tr><td>LEDs per ring</td><td>9</td><td>Counted</td></tr>
+<tr><td>Series resistors</td><td>3 × 100 ohm</td><td>Marking read (101)</td></tr>
+</table></div>
+<h2>Results</h2>
+<div class="tw"><table>
+<tr><th>Check</th><th>Result</th></tr>
+<tr><td>One 9 V battery</td><td>No light, both rings</td></tr>
+<tr><td>18 V, brief tap</td><td>Both rings light</td></tr>
+<tr><td>12 V batteries</td><td>Work perfectly</td></tr>
+<tr><td>Tape-up prototype</td><td>Lights, and looks good worn. Battery and ring taped to the strap plate. No printed parts</td></tr>
+<tr><td>Worn shape</td><td>The ring reads semi-square, and the LEDs show as dots</td></tr>
+<tr><td>Buckle</td><td>Sticks out farther than the light</td></tr>
+</table></div>
+<h2>Failure and fix</h2>
+<p>A single 9 V battery left both rings dark, and diode mode on my meter read OL both ways. They had already worked on the hoverboard, so I worried the soldering heat from pulling them off had killed them. That meter can false-fail these LEDs, and 9 V is at or below the string voltage. A 9 V battery also sags under load. Two 9 V batteries in series, tapped for 1–2 seconds at 18 V, lit both rings. I do not leave them on 18 V: the 100 ohm resistors run warm. They now run on 12 V batteries.</p>
+<p>The tape-up found the next problems. The chest-strap buckle sticks out farther than the light. Worn, the ring reads semi-square, and the nine LEDs show as separate dots. The housing has to hold the ring in a true circle, add a diffuser, and stand proud of the buckle or cover it. None of that is built.</p>
+<h2>Decisions</h2>
+<div class="tw"><table>
+<tr><th>Decision</th><th>Choice</th><th>Tradeoff</th></tr>
+<tr><td>Chest mount</td><td>Flat, slightly textured glue pad. The strap's back plate is hot-glued to it</td><td>The bracket is already off, so a printed 2-prong has nothing to mate with. The joint is not meant to come apart often</td></tr>
+<tr><td>Supply</td><td>12 V batteries. An A23 (28 × 10 mm) fits between two risers on the strap plate</td><td>9 V is too low. 18 V is a bulky bench workaround, and the resistors run warm. Capacity is small, so runtime is still unproven</td></tr>
+<tr><td>Diffuser</td><td>Required on the front of the housing</td><td>The worn prototype shows the LEDs as dots. Material is still open: a translucent printed layer, or frosted acrylic</td></tr>
+<tr><td>Housing</td><td>Not designed yet. It must hold a true circle, diffuse the LEDs, and clear or cover the buckle</td><td>The tape-up looks good and is not the shape I will print. CAD has not started</td></tr>
+</table></div>
+<h2>Visuals</h2>
+<div class="media">
+<figure><img src="../../assets/arc-reactor/2026-11-22_prototype-plate-lit_photo_v1.jpg" alt="Tape-up prototype in hand. The LED ring is lit blue on the chest-strap plate, with the 12 V battery taped between the plate risers" loading="lazy"><figcaption>Tape-up in hand. The ring is lit on the strap plate, and the 12 V A23 battery sits between the risers. No printed parts.</figcaption></figure>
+<figure><img src="../../assets/arc-reactor/2026-11-22_prototype-worn-mirror_photo_v1.jpg" alt="Mirror photo of the prototype worn under a black shirt, with the ring glowing through the fabric as separate points" loading="lazy"><figcaption>Worn under a black shirt. The ring glows through the fabric as separate points of light.</figcaption></figure>
+<figure><img src="../../assets/arc-reactor/2026-11-22_prototype-worn-closeup_photo_v1.jpg" alt="Close-up of the worn prototype. Nine LEDs show as distinct dots and the ring reads slightly squarish" loading="lazy"><figcaption>Close-up, worn. The nine LEDs are dots, and the ring reads semi-square. That is why the housing needs a true circle and a diffuser.</figcaption></figure>
+<figure><img src="../../assets/arc-reactor/2026-11-22_buckle-protrusion_photo_v1.jpg" alt="The chest-strap buckle under a shirt, sticking out farther than the light" loading="lazy"><figcaption>The chest-strap buckle under a shirt. It sticks out farther than the light, so the housing has to clear it or cover it.</figcaption></figure>
+</div>
+<figure><img src="../../assets/arc-reactor/2026-11-22_measurements_sketch_v1.jpg" alt="Hand-measured sheet: LED ring 60 mm outside, about 46 mm inside, about 6.6 mm band; strap prongs about 8 mm tall over 37 by 25 mm; 12 V battery 28 by 10 mm" style="width:100%;height:auto;max-height:none;object-fit:contain" loading="lazy"><figcaption>First measurements, 22 Nov 2026. Ring 60 mm OD, ~46 mm ID, ~6.6 mm band. Strap prongs ~8 mm tall over ~37 × 25 mm. 12 V battery 28 mm long × 10 mm diameter.</figcaption></figure>
+<figure><img src="../../assets/arc-reactor/2026-11-18_led-ring-18v-test_diagram_v1.png" alt="Diagram of two 9 V batteries wired in series to an LED ring for a one to two second 18 V tap" style="width:100%;height:auto;max-height:none;object-fit:contain" loading="lazy"><figcaption>18 V bench wiring: battery A+ tied to battery B−, free terminals to the ring +/−, tap 1–2 seconds only. This is the hookup that lit the rings after one 9 V battery left them dark.</figcaption></figure>
+<h2>Next steps</h2>
+<p class="note">Parked 22 Nov 2026 so CyberBoard comes first. CAD has not started.</p>
+<ul>
+<li>Still to measure: ring thickness with the LEDs, and the strap plate's overall length, width, and thickness</li>
+<li>Choose one ring or both, the button, and the diffuser material</li>
+<li>Housing: hold the ring in a true circle, add a diffuser, and clear or cover the buckle</li>
+<li>Confirm how long an A23 actually runs</li>
+</ul>
+</main>
+<footer><span class="who">Daniel Klabunde</span><span class="sep"> · </span><a href="mailto:danielj.klabunde@proton.me">danielj.klabunde@proton.me</a><span class="sep"> · </span><a href="https://github.com/Pillartheman1">GitHub</a></footer>
+</body>
+</html>
